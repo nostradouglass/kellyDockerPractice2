@@ -13,3 +13,10 @@ before_install:
 
 script:
   - docker run -e CI=true kellydouglass/front npm test -- --coverage
+
+deploy:
+  api_key:
+    secure: $HEROKU_TEMP_KEY
+  app: kelly-docker-practice-2
+  on:
+    repo: nostradouglass/kellyDockerPractice2
