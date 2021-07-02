@@ -15,8 +15,10 @@ script:
   - docker run -e CI=true kellydouglass/front npm test -- --coverage
 
 deploy:
+  provider: heroku
   api_key:
     secure: "$HEROKU_TEMP_KEY"
   app: kelly-docker-practice-2
   on:
-    repo: nostradouglass/kellyDockerPractice2
+    branch: main
+    # repo: nostradouglass/kellyDockerPractice2
