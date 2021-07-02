@@ -1,0 +1,21 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "watch": "tsc --watch",
+    "dev": "nodemon ./dist/bin/www",
+    "build": "tsc",
+    "start": "node ./dist/bin/www"
+    
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  }
+}

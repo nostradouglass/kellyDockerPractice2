@@ -1,0 +1,11 @@
+language: generic
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t kellydouglass/front -f ./front/Dockerfile.dev ./front
+
+script:
+  - docker run -e CI=true kelldouglass/front npm test -- --coverage
