@@ -1,4 +1,4 @@
-language: generic
+language: javascript
 sudo: required
 
 branches:
@@ -13,3 +13,4 @@ before_install:
 
 script:
   - docker run -e CI=true kellydouglass/front npm test -- --coverage
+
