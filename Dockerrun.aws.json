@@ -1,0 +1,33 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "front",
+            "image": "kellydouglass/dockerpractice2_front",
+            "hostname": "front",
+            "essential": false,
+            "memory": 128
+        },
+        {
+            "name": "api",
+            "image": "kellydouglass/dockerpractice2_api",
+            "hostname": "api",
+            "essential": false,
+            "memory": 128
+        },
+        {
+            "name": "nginx",
+            "image": "kellydouglass/dockerpractice2_nginx",
+            "hostname": "nginx",
+            "essential": true,
+            "memory": 128,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": ["front", "api"]
+        }
+    ]
+}

@@ -19,6 +19,9 @@ services:
             - /app/node_modules
             - ./front:/app
     nginx:
+        depends_on: 
+            - front
+            - api
         restart: always
         image: kellydouglass/dockerpractice2_nginx
         build:
